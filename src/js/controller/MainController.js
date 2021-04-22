@@ -1,4 +1,4 @@
-class MyRectController{
+class MainController{
     constructor (){
     let logic;
     logic = new Logic;
@@ -6,7 +6,7 @@ class MyRectController{
 
     }
     move(){
-        logic.move();
+        //logic.move();
 }
 
 }

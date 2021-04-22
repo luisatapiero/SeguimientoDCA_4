@@ -1,8 +1,6 @@
 class Logic{
     
     constructor (speedX, speedY){
-        let myRectController;
-        myRectController = new MyRectController;
         this.speedX = speedX;
         this.speedY = speedY;
     }
