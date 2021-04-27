@@ -20,6 +20,9 @@ switch (screen) {
         noStroke();
         fill (255);
         rect (230, 250, 100, 30);
+        fill (0);
+        textAlign(CENTER, CENTER);
+        text(firstScreen.number, 230, 250);
         controllerMain.draw();
 
         break;

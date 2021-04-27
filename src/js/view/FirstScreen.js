@@ -1,4 +1,5 @@
 let number;
+
 let buttonAdd;
 let buttonSubtract;
 
@@ -14,12 +15,15 @@ class FirstScreen{
         buttonSubtract.position(320, 245);
         buttonSubtract.mousePressed(subtractButton);
     }
+
 }
     function addButton(){
-
+        number =+ 1;
+        console.log("sirvo");
     }
 
     function subtractButton(){
-
+        number =- 1;
+        console.log("sirvo -");
     }
 
