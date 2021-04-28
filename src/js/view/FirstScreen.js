@@ -39,7 +39,13 @@ class FirstScreen{
     }
 
     function nextScreen(){
-        screen = 2;
+
+        if (counter > 1 && counter < 10){
+            screen = 2;
+        }else{
+            alert("El número ingresado debe estar entre 1 y 10", 230, 400);
+        }
+        
 
     }
 
