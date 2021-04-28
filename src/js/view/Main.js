@@ -8,6 +8,16 @@ function setup(){
     controllerMain = new ControllerMain();
     firstScreen = new FirstScreen();
     screen = 1;
+
+    
+    this.counter = 0;
+    buttonAdd = createButton('+');
+    buttonAdd.position(320, 245);
+    buttonAdd.mousePressed(sumCounter)
+
+    buttonSubtract = createButton('-');
+    buttonSubtract.position(130, 245);
+    buttonSubtract.mousePressed(subtractCounter)
 }
 
 function draw(){
@@ -22,8 +32,10 @@ switch (screen) {
         rect (230, 250, 100, 30);
         fill (0);
         textAlign(CENTER, CENTER);
-        text(firstScreen.number, 230, 250);
+        text(counter, 230, 250);
         controllerMain.draw();
+
+        
 
         break;
     case 2:

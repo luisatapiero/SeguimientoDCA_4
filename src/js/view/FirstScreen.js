@@ -1,29 +1,29 @@
-let number;
-
+let counter;
 let buttonAdd;
 let buttonSubtract;
 
 class FirstScreen{
     constructor(){
 
-        this.number = 0;
+        counter = parseInt(0);
+
+        
         buttonAdd = createButton('+');
-        buttonAdd.position(130, 245);
-        buttonAdd.mousePressed(addButton);
+        buttonAdd.position(320, 245);
+        buttonAdd.mousePressed(sumCounter)
 
         buttonSubtract = createButton('-');
-        buttonSubtract.position(320, 245);
-        buttonSubtract.mousePressed(subtractButton);
+        buttonSubtract.position(130, 245);
+        buttonSubtract.mousePressed(subtractCounter)
     }
-
+    
 }
-    function addButton(){
-        number =+ 1;
-        console.log("sirvo");
+   function sumCounter(){
+        counter++;
     }
 
-    function subtractButton(){
-        number =- 1;
-        console.log("sirvo -");
+    function subtractCounter(){
+        counter--;
+
     }
 
