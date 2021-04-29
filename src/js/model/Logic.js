@@ -12,7 +12,7 @@ class Logic{
         screen = 1;
         this.square = new Square;
         
-        this.squareList = squareList[counter];
+        //this.squareList = squareList[];
         this.createButtons();
 
     }
@@ -36,20 +36,22 @@ class Logic{
                 buttonAdd.hide();
                 buttonSubtract.hide();
                 buttonContinue.hide();
+                this.createSquare();
     
                 break;
         
             default:
                 break;
         }
-        this.createSquare();
+        
     }
 
     createSquare(){
-        for (let i = 0; i < squareList.length; i++) {
+        for (let i = 0; i < counter; i++) {
             
-            squareList[i].square.drawSquare(60*i,100,50,50);
-            squareList[i].square.move();
+            squareList[i] = new Square(60*i,100,50,50);
+            squareList[i].drawSquare();
+            squareList[i].move();
         }
     }
 

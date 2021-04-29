@@ -7,11 +7,11 @@ class Square extends Figure{
         console.log("funciona draw")
         noStroke();
         fill(253, 247, 250);
-        rect(posX,posY,size,size);
+        rect(this.posX,this.posY,this.size,this.size);
     }
 
-    move(){
-        console.log("funciona")
+    move(posX){
+        //console.log("funciona")
         if (posX > 0){
             posX += 2;
         }else if(posX<500){

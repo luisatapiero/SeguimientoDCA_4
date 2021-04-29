@@ -6,6 +6,6 @@ class Circle extends Figure{
     draw(){
         noStroke();
         fill(253, 247, 250);
-        ellipse(this.posX,this.posY,this.size,this.size );
+        ellipse(this.posX,this.posY,this.size,this.size);
     }
 }
