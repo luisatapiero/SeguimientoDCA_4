@@ -3,6 +3,10 @@ let screen;
 let buttonAdd;
 let buttonSubtract;
 let buttonContinue;
+let buttonNewElements;
+let buttonDeleteElements;
+let buttonCreateCircles;
+let buttonDuplicateSize;
 let square;
 let squareList = [];
 class Logic{
@@ -21,7 +25,10 @@ class Logic{
         
         switch (screen) {
             case 1:
-
+                buttonNewElements.hide();
+                buttonDeleteElements.hide();
+                buttonDuplicateSize.hide();
+                buttonCreateCircles.hide();
                 noStroke();
                 fill (250);
                 rect (410, 235, 140, 30);
@@ -37,6 +44,10 @@ class Logic{
                 buttonAdd.hide();
                 buttonSubtract.hide();
                 buttonContinue.hide();
+                buttonNewElements.show();
+                buttonDeleteElements.show();
+                buttonDuplicateSize.show();
+                buttonCreateCircles.show();
                 this.createSquare();
                 this.paintSquare();
     
@@ -58,11 +69,13 @@ class Logic{
     paintSquare(){
         for (let i = 0; i < counter; i++) {
         squareList[i].drawSquare();
-        //squareList[i].moveSquare();
         }
     }
 
     createButtons(){
+
+        //Buttons first screen
+
         buttonAdd = createButton('+');
         buttonAdd.position(570, 245);
         buttonAdd.mousePressed(sumCounter)
@@ -74,6 +87,25 @@ class Logic{
         buttonContinue = createButton('Continuar');
         buttonContinue.position(450, 320);
         buttonContinue.mousePressed(nextScreen)
+
+        //Buttons second screen
+
+        buttonNewElements = createButton('Agregar elementos');
+        buttonNewElements.position(200, 400);
+        buttonNewElements.mousePressed(newElements)
+
+        buttonDeleteElements = createButton('Eliminar elementos');
+        buttonDeleteElements.position(400, 400);
+        buttonDeleteElements.mousePressed(deleteElements)
+
+        buttonDuplicateSize = createButton('Doblar tamaño');
+        buttonDuplicateSize.position(600, 400);
+        buttonDuplicateSize.mousePressed(duplicateSize)
+
+        buttonCreateCircles = createButton('Crear círculos');
+        buttonCreateCircles.position(800, 400);
+        buttonCreateCircles.mousePressed(createCircles)
+
     }
 
 
@@ -97,6 +129,25 @@ function nextScreen(){
         alert("El número ingresado debe estar entre 1 y 10", 230, 400);
         counter = 0;
     }
-    
 
+}
+
+function newElements(){
+    console.log("New elements");
+
+    if (squareList.length < 10){
+        squareList.push(new Square(100*i+50,150,50));
+    }
+}
+
+function deleteElements(){
+    console.log("Delete elements");
+}
+
+function duplicateSize(){
+    console.log("Duplicate Size");
+}
+
+function createCircles(){
+    console.log("Create Circles");
 }

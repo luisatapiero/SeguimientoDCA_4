@@ -7,11 +7,10 @@ class Square extends Figure{
     }
 
     drawSquare(){
-        //console.log("funciona el drawSquare");
+
         noStroke();
         fill(253, 247, 250);
         rect (this.posX, this.posY, this.size, this.size);
-        //noLoop();
         fill(68, 52, 79);
         text (this.value, this.posX, this.posY);
         this.moveSquare();
@@ -19,8 +18,6 @@ class Square extends Figure{
     }
 
     moveSquare(){
-
-            console.log(this.posX);
             this.posX +=  2;
             if(this.posX  < 0 || this.posX - (this.size/2)-5  > 1000){
                 this.posX = -2;
