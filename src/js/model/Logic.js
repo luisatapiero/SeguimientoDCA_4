@@ -18,7 +18,7 @@ class Logic{
         
         //this.squareList = squareList[];
         this.createButtons();
-
+        this.createSquare();
     }
 
     draw (){
@@ -41,6 +41,7 @@ class Logic{
                 break;
             case 2:
                 rectMode(CENTER);
+                console.log(squareList.length);
                 buttonAdd.hide();
                 buttonSubtract.hide();
                 buttonContinue.hide();
@@ -48,7 +49,7 @@ class Logic{
                 buttonDeleteElements.show();
                 buttonDuplicateSize.show();
                 buttonCreateCircles.show();
-                this.createSquare();
+                
                 this.paintSquare();
     
                 break;
@@ -61,13 +62,16 @@ class Logic{
 
     createSquare(){
         for (let i = 0; i < counter; i++) {
-            squareList.push(new Square(100*i+50,150,40));
+            if (squareList.length < counter){
+                squareList.push(new Square(100*i+50,150,40));
+
+            }
             
         }
     }
 
     paintSquare(){
-        for (let i = 0; i < counter; i++) {
+        for (let i = 0; i < squareList.length; i++) {
         squareList[i].drawSquare();
         }
     }
@@ -137,13 +141,14 @@ function newElements(){
 
     if (squareList.length < 10){
         squareList.push(new Square(0,150,40));
-        this.paintSquare();
+        Square.paintSquare();
     }
 }
 
 function deleteElements(){
     console.log("Delete elements");
     squareList.pop();
+    
 }
 
 function duplicateSize(){
