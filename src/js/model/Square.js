@@ -2,7 +2,7 @@ let speed;
 class Square extends Figure{
     constructor(posX,posY,size, value){
        super(posX, posY, size, value)
-       speed = 10;
+       speed = 2;
        this.value = (int(random(1,10)));
     }
 
@@ -21,9 +21,9 @@ class Square extends Figure{
             //loop();
             //isLoopin();
             console.log(this.posX);
-            //this.posX = this.posX + speed;
-            this.posX = frameCount % width;
-            if(this.posX < 0 || this.posX > 500){
+            this.posX = this.posX + speed;
+            //this.posX = frameCount % width;
+            if(this.posX - this.size < 0 || this.posX + this.size > 1000){
                 speed = -speed;
             }
         }

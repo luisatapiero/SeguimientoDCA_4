@@ -38,6 +38,7 @@ class Logic{
                 buttonSubtract.hide();
                 buttonContinue.hide();
                 this.createSquare();
+                this.paintSquare();
     
                 break;
         
@@ -50,13 +51,15 @@ class Logic{
     createSquare(){
         for (let i = 0; i < counter; i++) {
             squareList.push(new Square(80*i+20,150,50));
-            this.paintSquare(i);
+            
         }
     }
 
-    paintSquare(i){
+    paintSquare(){
+        for (let i = 0; i < counter; i++) {
         squareList[i].drawSquare();
         squareList[i].moveSquare();
+    }
     }
 
     createButtons(){
