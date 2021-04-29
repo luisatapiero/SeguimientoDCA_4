@@ -24,10 +24,21 @@ class Square extends Figure{
             }
         }
 
+    duplicateSize(){
+        this.size *= 2;
+    }
+
         getValue() {
             return this.value;
         }
+
+        getSize() {
+            return this.size;
+        }
         
+        setSize(size) {
+            this.size = size;;
+        }
     }
 
 

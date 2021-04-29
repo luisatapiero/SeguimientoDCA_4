@@ -61,7 +61,7 @@ class Logic{
 
     createSquare(){
         for (let i = 0; i < counter; i++) {
-            squareList.push(new Square(100*i+50,150,50));
+            squareList.push(new Square(100*i+50,150,40));
             
         }
     }
@@ -136,16 +136,21 @@ function newElements(){
     console.log("New elements");
 
     if (squareList.length < 10){
-        squareList.push(new Square(100*i+50,150,50));
+        squareList.push(new Square(0,150,40));
+        this.paintSquare();
     }
 }
 
 function deleteElements(){
     console.log("Delete elements");
+    squareList.pop();
 }
 
 function duplicateSize(){
     console.log("Duplicate Size");
+    squareList.forEach(function(element){
+        element.duplicateSize();
+    })
 }
 
 function createCircles(){
