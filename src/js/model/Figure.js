@@ -1,10 +1,10 @@
 class Figure{
     
-    constructor (posX, posY, size, value){
+    constructor (posX, posY, size){
         this.posX = posX;
         this.posY = posY;
         this.size = size;
-        this.value = value;
+        //this.value = value;
     }
   
 

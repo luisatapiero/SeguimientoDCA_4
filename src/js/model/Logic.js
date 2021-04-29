@@ -24,17 +24,16 @@ class Logic{
 
                 noStroke();
                 fill (250);
-                rect (160, 235, 140, 30);
+                rect (410, 235, 140, 30);
                 textAlign(CENTER, CENTER);
                 textSize(14);
-                text("Ingrese un valor de 1 y 10", 230, 200);
+                text("Ingrese un valor de 1 y 10", 480, 200);
                 textSize(12);
                 fill (68, 52, 79);
-                text(counter, 230, 250);
+                text(counter, 482, 250);
                 break;
             case 2:
                 rectMode(CENTER);
-                console.log("counter es "+counter);
                 buttonAdd.hide();
                 buttonSubtract.hide();
                 buttonContinue.hide();
@@ -50,25 +49,32 @@ class Logic{
 
     createSquare(){
         for (let i = 0; i < counter; i++) {
-            //let value1 = (int(random(1,10)))
-            squareList[i] = new Square(80*i+20,150,50,5);
-            squareList[i].drawSquare();
+            squareList.push(new Square(80*i+20,150,50));
+            this.paintSquare(i);
         }
+    }
+
+    paintSquare(i){
+        squareList[i].drawSquare();
+        squareList[i].moveSquare();
     }
 
     createButtons(){
         buttonAdd = createButton('+');
-        buttonAdd.position(320, 245);
+        buttonAdd.position(570, 245);
         buttonAdd.mousePressed(sumCounter)
 
         buttonSubtract = createButton('-');
-        buttonSubtract.position(135, 245);
+        buttonSubtract.position(385, 245);
         buttonSubtract.mousePressed(subtractCounter)
 
         buttonContinue = createButton('Continuar');
-        buttonContinue.position(200, 320);
+        buttonContinue.position(450, 320);
         buttonContinue.mousePressed(nextScreen)
     }
+
+
+    
 }
 
 function sumCounter(){

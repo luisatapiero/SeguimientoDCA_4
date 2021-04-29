@@ -1,6 +1,7 @@
 class Circle extends Figure{
-    constructor (posX, posY, size, value){
-        super(posX, posY, size, value);
+    constructor (posX, posY, size){
+        super(posX, posY, size);
+        this.value = (int (random(1,10)));
     }
 
     draw(){

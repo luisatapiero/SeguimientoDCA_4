@@ -2,7 +2,7 @@ let controllerMain;
 
 function setup(){
     
-    createCanvas(500,500);
+    createCanvas(1000,500);
     controllerMain = new ControllerMain();
     screen = 1;
 
@@ -12,6 +12,6 @@ function setup(){
 function draw(){
     
     background(68, 52, 79);
-    controllerMain.draw(screen);
+    controllerMain.draw();
 
 }

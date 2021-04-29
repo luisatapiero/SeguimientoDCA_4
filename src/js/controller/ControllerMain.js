@@ -6,8 +6,8 @@ class ControllerMain{
     
 
     }
-    draw(screen){
-        logic.draw(screen);
+    draw(){
+        logic.draw();
 }
 
 }
