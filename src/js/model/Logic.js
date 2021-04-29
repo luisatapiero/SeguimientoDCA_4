@@ -18,12 +18,13 @@ class Logic{
     }
 
     draw (){
+        
         switch (screen) {
             case 1:
 
                 noStroke();
                 fill (250);
-                rect (230, 250, 100, 30);
+                rect (160, 235, 140, 30);
                 textAlign(CENTER, CENTER);
                 textSize(14);
                 text("Ingrese un valor de 1 y 10", 230, 200);
@@ -32,6 +33,7 @@ class Logic{
                 text(counter, 230, 250);
                 break;
             case 2:
+                rectMode(CENTER);
                 console.log("counter es "+counter);
                 buttonAdd.hide();
                 buttonSubtract.hide();
@@ -48,10 +50,9 @@ class Logic{
 
     createSquare(){
         for (let i = 0; i < counter; i++) {
-            
-            squareList[i] = new Square(60*i,100,50,50);
+            //let value1 = (int(random(1,10)))
+            squareList[i] = new Square(80*i+20,150,50,5);
             squareList[i].drawSquare();
-            squareList[i].move();
         }
     }
 

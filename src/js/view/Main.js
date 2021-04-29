@@ -10,7 +10,7 @@ function setup(){
 }
 
 function draw(){
-    rectMode(CENTER);
+    
     background(68, 52, 79);
     controllerMain.draw(screen);
 
