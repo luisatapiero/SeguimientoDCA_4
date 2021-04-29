@@ -3,10 +3,21 @@ class Square extends Figure{
        super(posX, posY, size, value)
     }
 
-    draw(){
+    drawSquare(){
+        console.log("funciona draw")
         noStroke();
         fill(253, 247, 250);
-        rect(200,200,20,20);
+        rect(posX,posY,size,size);
+    }
+
+    move(){
+        console.log("funciona")
+        if (posX > 0){
+            posX += 2;
+        }else if(posX<500){
+            posX -= 2;
+        }
+        
     }
 }
 

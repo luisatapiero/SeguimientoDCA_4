@@ -1,5 +1,4 @@
 let logic;
-
 class ControllerMain{
     constructor (){
     
@@ -7,8 +6,8 @@ class ControllerMain{
     
 
     }
-    draw(){
-        logic.draw();
+    draw(screen){
+        logic.draw(screen);
 }
 
 }
