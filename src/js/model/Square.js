@@ -14,17 +14,16 @@ class Square extends Figure{
         //noLoop();
         fill(68, 52, 79);
         text (this.value, this.posX, this.posY);
+        this.moveSquare();
         
     }
 
     moveSquare(){
-            //loop();
-            //isLoopin();
+
             console.log(this.posX);
-            this.posX = this.posX + speed;
-            //this.posX = frameCount % width;
-            if(this.posX - this.size < 0 || this.posX + this.size > 1000){
-                speed = -speed;
+            this.posX +=  2;
+            if(this.posX  < 0 || this.posX - (this.size/2)-5  > 1000){
+                this.posX = -2;
             }
         }
 

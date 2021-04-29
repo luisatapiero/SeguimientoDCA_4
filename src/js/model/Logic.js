@@ -50,7 +50,7 @@ class Logic{
 
     createSquare(){
         for (let i = 0; i < counter; i++) {
-            squareList.push(new Square(80*i+20,150,50));
+            squareList.push(new Square(100*i+50,150,50));
             
         }
     }
@@ -58,8 +58,8 @@ class Logic{
     paintSquare(){
         for (let i = 0; i < counter; i++) {
         squareList[i].drawSquare();
-        squareList[i].moveSquare();
-    }
+        //squareList[i].moveSquare();
+        }
     }
 
     createButtons(){
