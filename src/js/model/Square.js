@@ -25,7 +25,12 @@ class Square extends Figure{
         }
 
     duplicateSize(){
-        this.size *= 2;
+        if (this.size == 40){
+            this.size *= 2;
+        }else{
+            this.size = 40;
+        }
+        
     }
 
         getValue() {

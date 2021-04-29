@@ -18,7 +18,7 @@ class Logic{
         
         //this.squareList = squareList[];
         this.createButtons();
-        this.createSquare();
+        
     }
 
     draw (){
@@ -49,7 +49,7 @@ class Logic{
                 buttonDeleteElements.show();
                 buttonDuplicateSize.show();
                 buttonCreateCircles.show();
-                
+                this.createSquare();
                 this.paintSquare();
     
                 break;
@@ -140,14 +140,18 @@ function newElements(){
     console.log("New elements");
 
     if (squareList.length < 10){
-        squareList.push(new Square(0,150,40));
-        Square.paintSquare();
+        //squareList.push(new Square(0,150,40));
+        //Square.paintSquare();
+        counter++;
     }
+
+    
 }
 
 function deleteElements(){
     console.log("Delete elements");
     squareList.pop();
+    counter--;
     
 }
 
