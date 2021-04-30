@@ -50,7 +50,11 @@ class Square extends Figure{
         }
         
         setSize(size) {
-            this.size = size;;
+            this.size = size;
+        }
+
+        getPosX(){
+            return this.posX;
         }
     }
 

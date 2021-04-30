@@ -4,12 +4,13 @@ class Circle extends Figure{
         this.value = (int (random(1,10)));
     }
 
-    draw(){
+    drawCircles(){
         noStroke();
         fill(253, 247, 250);
         ellipse(this.posX,this.posY,this.size,this.size);
+        fill(68, 52, 79);
         text (this.value, this.posX, this.posY);
-    
+        this.moveCircle();
     }
 
     moveCircle(){
@@ -24,6 +25,15 @@ class Circle extends Figure{
         this.size *= 2;
     }
     
+}
+sortList() {
+    if (keyCode === 78) {
+        console.log("sirvo");
+        circleList.sort(function (a, b) {
+            return a.value - b.value;
+        });
+
+    }
 }
     
 }

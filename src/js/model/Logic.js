@@ -10,7 +10,7 @@ let buttonDuplicateSize;
 let square;
 let circle;
 let squareList = [];
-let circleList = [];
+let circleList = null;
 class Logic{
 
     constructor (){
@@ -51,8 +51,8 @@ class Logic{
                 buttonDeleteElements.show();
                 buttonDuplicateSize.show();
                 buttonCreateCircles.show();
-                this.createSquare();
                 this.paintSquare();
+                this.paintCircles();
     
                 break;
         
@@ -63,19 +63,22 @@ class Logic{
     }
 
     createSquare(){
-        for (let i = 0; i < counter; i++) {
-            if (squareList.length < counter){
-                squareList.push(new Square(100*i,150,25));
-
-            }
-            
-        }
+        
     }
 
     paintSquare(){
         for (let i = 0; i < squareList.length; i++) {
         squareList[i].drawSquare();
         }
+    }
+
+    paintCircles(){
+        if (circleList != null){
+            for (let i = 0; i < circleList.length; i++) {
+                circleList[i].drawCircles();
+                }
+        }
+        
     }
 
     createButtons(){
@@ -110,7 +113,7 @@ class Logic{
 
         buttonCreateCircles = createButton('Crear círculos');
         buttonCreateCircles.position(800, 400);
-        buttonCreateCircles.mousePressed(createCircles)
+        buttonCreateCircles.mousePressed(createCircles);
 
     }
 
@@ -141,6 +144,13 @@ function subtractCounter(){
 function nextScreen(){
 
     if (counter >= 1 && counter <= 10){
+        for (let i = 0; i < counter; i++) {
+            if (squareList.length < counter){
+                squareList.push(new Square(100*i,150,25));
+
+            }
+            
+        }
         screen = 2;
     }else{
         alert("El número ingresado debe estar entre 1 y 10", 230, 400);
@@ -153,8 +163,10 @@ function newElements(){
     console.log("New elements");
 
     if (squareList.length < 10){
-        //squareList.push(new Square(0,150,40));
-        //Square.paintSquare();
+        squareList.push(new Square(0,150,25));
+        if(circleList != null){
+            circleList.push(new Circle(0,300,25));
+        }
         counter++;
     }
 
@@ -166,6 +178,9 @@ function deleteElements(){
     if (squareList.length > 1){
         console.log("Delete elements");
         squareList.pop();
+        if(circleList != null){
+            circleList.pop();
+        }
         counter--;
     }
     
@@ -177,11 +192,17 @@ function duplicateSize(){
     squareList.forEach(function(element){
         element.duplicateSize();
     })
+    if(circleList != null){
+       circleList.forEach(function(element){
+            element.duplicateSize();
+        })
+    }
 }
 
 function createCircles(){
     console.log("Create Circles");
-    let circleList = squareList.map(function(element){
-        squareList.push(new Square(100*i,150,25));
-    })
+    circleList = squareList.map(function(element,index){
+        return element = new Circle(squareList[index].getPosX(),300,squareList[index].getSize());
+
+    });
 }
