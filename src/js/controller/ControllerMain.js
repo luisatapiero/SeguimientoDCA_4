@@ -10,4 +10,8 @@ class ControllerMain{
         logic.draw();
 }
 
+    sortList(){
+        logic.sortList();
+    }
+
 }

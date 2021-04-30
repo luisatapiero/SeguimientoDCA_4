@@ -8,14 +8,16 @@ let buttonDeleteElements;
 let buttonCreateCircles;
 let buttonDuplicateSize;
 let square;
+let circle;
 let squareList = [];
+let circleList = [];
 class Logic{
 
     constructor (){
         counter = 0;
         screen = 1;
         this.square = new Square;
-        
+        this.circle = new Circle;
         //this.squareList = squareList[];
         this.createButtons();
         
@@ -63,7 +65,7 @@ class Logic{
     createSquare(){
         for (let i = 0; i < counter; i++) {
             if (squareList.length < counter){
-                squareList.push(new Square(100*i+50,150,40));
+                squareList.push(new Square(100*i,150,25));
 
             }
             
@@ -113,6 +115,17 @@ class Logic{
     }
 
 
+    sortList() {
+        if (keyCode === 78) {
+            console.log("sirvo");
+            squareList.sort(function (a, b) {
+                return a.getValue() - b.getValue();
+            });
+
+        }
+    }
+
+
     
 }
 
@@ -149,9 +162,13 @@ function newElements(){
 }
 
 function deleteElements(){
-    console.log("Delete elements");
-    squareList.pop();
-    counter--;
+    
+    if (squareList.length > 1){
+        console.log("Delete elements");
+        squareList.pop();
+        counter--;
+    }
+    
     
 }
 
@@ -164,4 +181,7 @@ function duplicateSize(){
 
 function createCircles(){
     console.log("Create Circles");
+    let circleList = squareList.map(function(element){
+        squareList.push(new Square(100*i,150,25));
+    })
 }

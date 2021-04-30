@@ -15,3 +15,7 @@ function draw(){
     controllerMain.draw();
 
 }
+
+function keyPressed(){
+    controllerMain.sortList();
+}

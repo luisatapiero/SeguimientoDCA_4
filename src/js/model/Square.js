@@ -25,12 +25,20 @@ class Square extends Figure{
         }
 
     duplicateSize(){
-        if (this.size == 40){
+        if (this.size == 25){
             this.size *= 2;
-        }else{
-            this.size = 40;
         }
         
+    }
+
+    sortList() {
+        if (keyCode === 78) {
+            console.log("sirvo");
+            squareList.sort(function (a, b) {
+                return a.value - b.value;
+            });
+
+        }
     }
 
         getValue() {
