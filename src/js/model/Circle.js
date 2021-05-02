@@ -26,14 +26,6 @@ class Circle extends Figure{
     }
     
 }
-sortList() {
-    if (keyCode === 78) {
-        console.log("sirvo");
-        circleList.sort(function (a, b) {
-            return a.value - b.value;
-        });
 
-    }
-}
     
 }

@@ -11,20 +11,20 @@ let square;
 let circle;
 let squareList = [];
 let circleList = null;
-class Logic{
+class Logic {
 
-    constructor (){
+    constructor() {
         counter = 0;
         screen = 1;
         this.square = new Square;
         this.circle = new Circle;
         //this.squareList = squareList[];
         this.createButtons();
-        
+
     }
 
-    draw (){
-        
+    draw() {
+
         switch (screen) {
             case 1:
                 buttonNewElements.hide();
@@ -32,18 +32,18 @@ class Logic{
                 buttonDuplicateSize.hide();
                 buttonCreateCircles.hide();
                 noStroke();
-                fill (250);
-                rect (410, 235, 140, 30);
+                fill(250);
+                rect(410, 235, 140, 30);
                 textAlign(CENTER, CENTER);
                 textSize(14);
                 text("Ingrese un valor de 1 y 10", 480, 200);
                 textSize(12);
-                fill (68, 52, 79);
+                fill(68, 52, 79);
                 text(counter, 482, 250);
                 break;
             case 2:
                 rectMode(CENTER);
-                console.log(squareList.length);
+                //console.log(squareList.length);
                 buttonAdd.hide();
                 buttonSubtract.hide();
                 buttonContinue.hide();
@@ -53,35 +53,31 @@ class Logic{
                 buttonCreateCircles.show();
                 this.paintSquare();
                 this.paintCircles();
-    
+
                 break;
-        
+
             default:
                 break;
         }
-        
+
     }
 
-    createSquare(){
-        
-    }
-
-    paintSquare(){
+    paintSquare() {
         for (let i = 0; i < squareList.length; i++) {
-        squareList[i].drawSquare();
+            squareList[i].drawSquare();
         }
     }
 
-    paintCircles(){
-        if (circleList != null){
+    paintCircles() {
+        if (circleList != null) {
             for (let i = 0; i < circleList.length; i++) {
                 circleList[i].drawCircles();
-                }
+            }
         }
-        
+
     }
 
-    createButtons(){
+    createButtons() {
 
         //Buttons first screen
 
@@ -119,90 +115,93 @@ class Logic{
 
 
     sortList() {
-        if (keyCode === 78) {
-            console.log("sirvo");
-            squareList.sort(function (a, b) {
-                return a.getValue() - b.getValue();
-            });
-
+        
+        squareList.sort(compare);
+        console.log("sort");
+        for (let i= 0; i < squareList.length;i++){
+            console.log(squareList[i].getValue()+" "+squareList[i].getPosX());
         }
+        
+
     }
+}
 
-
+function compare(a, b) {
+    return a.getValue()-b.getValue();
     
 }
 
-function sumCounter(){
+function sumCounter() {
     counter++;
 }
 
-function subtractCounter(){
+function subtractCounter() {
     counter--;
 
 }
 
-function nextScreen(){
+function nextScreen() {
 
-    if (counter >= 1 && counter <= 10){
+    if (counter >= 1 && counter <= 10) {
         for (let i = 0; i < counter; i++) {
-            if (squareList.length < counter){
-                squareList.push(new Square(100*i,150,25));
+            if (squareList.length < counter) {
+                squareList.push(new Square(100 * i+50, 150, 25));
 
             }
-            
+
         }
         screen = 2;
-    }else{
+    } else {
         alert("El número ingresado debe estar entre 1 y 10", 230, 400);
         counter = 0;
     }
 
 }
 
-function newElements(){
+function newElements() {
     console.log("New elements");
 
-    if (squareList.length < 10){
-        squareList.push(new Square(0,150,25));
-        if(circleList != null){
-            circleList.push(new Circle(0,300,25));
+    if (squareList.length < 10) {
+        squareList.push(new Square(0, 150, 25));
+        if (circleList != null) {
+            circleList.push(new Circle(0, 300, 25));
         }
         counter++;
     }
 
-    
+
 }
 
-function deleteElements(){
-    
-    if (squareList.length > 1){
+function deleteElements() {
+
+    if (squareList.length > 1) {
         console.log("Delete elements");
         squareList.pop();
-        if(circleList != null){
+        if (circleList != null) {
             circleList.pop();
         }
         counter--;
     }
-    
-    
+
+
 }
 
-function duplicateSize(){
+function duplicateSize() {
     console.log("Duplicate Size");
-    squareList.forEach(function(element){
+    squareList.forEach(function (element) {
         element.duplicateSize();
     })
-    if(circleList != null){
-       circleList.forEach(function(element){
+    if (circleList != null) {
+        circleList.forEach(function (element) {
             element.duplicateSize();
         })
     }
 }
 
-function createCircles(){
+function createCircles() {
     console.log("Create Circles");
-    circleList = squareList.map(function(element,index){
-        return element = new Circle(squareList[index].getPosX(),300,squareList[index].getSize());
+    circleList = squareList.map(function (element, index) {
+        return element = new Circle(squareList[index].getPosX(), 300, squareList[index].getSize());
 
     });
 }

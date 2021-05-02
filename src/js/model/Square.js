@@ -13,7 +13,7 @@ class Square extends Figure{
         rect (this.posX, this.posY, this.size, this.size);
         fill(68, 52, 79);
         text (this.value, this.posX, this.posY);
-        this.moveSquare();
+        //this.moveSquare();
         
     }
 
@@ -31,15 +31,6 @@ class Square extends Figure{
         
     }
 
-    sortList() {
-        if (keyCode === 78) {
-            console.log("sirvo");
-            squareList.sort(function (a, b) {
-                return a.value - b.value;
-            });
-
-        }
-    }
 
         getValue() {
             return this.value;
@@ -58,4 +49,4 @@ class Square extends Figure{
         }
     }
 
-
+    

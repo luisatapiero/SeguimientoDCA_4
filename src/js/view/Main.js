@@ -17,5 +17,8 @@ function draw(){
 }
 
 function keyPressed(){
-    controllerMain.sortList();
+    if (keyCode == 78){
+        controllerMain.sortList();
+    }
+   
 }
