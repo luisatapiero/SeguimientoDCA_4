@@ -26,6 +26,24 @@ class Circle extends Figure{
     }
     
 }
+getValue() {
+    return this.value;
+}
 
+getSize() {
+    return this.size;
+}
+
+setSize(size) {
+    this.size = size;
+}
+
+getPosX(){
+    return this.posX;
+}
+
+setPosX(posX) {
+    this.posX = posX;
+}
     
 }

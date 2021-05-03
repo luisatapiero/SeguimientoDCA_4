@@ -122,10 +122,16 @@ class Logic {
         console.log("sort");
         for (let i= 0; i < squareList.length;i++){
             console.log(squareList[i].getValue()+" "+squareList[i].getPosX()+ " "+i);
-            //squareList[i].drawSquare();
             squareList[i].setPosX((100*i)+20);
         }
         
+        if(circleList != null){
+            circleList.sort(compare);
+            for (let i= 0; i < circleList.length;i++){
+                console.log(circleList[i].getValue()+" "+circleList[i].getPosX()+ " "+i);
+                circleList[i].setPosX((100*i)+20);
+            }
+        }
     }
 }
 
