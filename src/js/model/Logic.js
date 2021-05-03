@@ -20,6 +20,7 @@ class Logic {
         this.circle = new Circle;
         //this.squareList = squareList[];
         this.createButtons();
+        
 
     }
 
@@ -53,7 +54,6 @@ class Logic {
                 buttonCreateCircles.show();
                 this.paintSquare();
                 this.paintCircles();
-
                 break;
 
             default:
@@ -62,9 +62,11 @@ class Logic {
 
     }
 
+
     paintSquare() {
         for (let i = 0; i < squareList.length; i++) {
             squareList[i].drawSquare();
+    
         }
     }
 
@@ -119,10 +121,11 @@ class Logic {
         squareList.sort(compare);
         console.log("sort");
         for (let i= 0; i < squareList.length;i++){
-            console.log(squareList[i].getValue()+" "+squareList[i].getPosX());
+            console.log(squareList[i].getValue()+" "+squareList[i].getPosX()+ " "+i);
+            //squareList[i].drawSquare();
+            squareList[i].setPosX((100*i)+20);
         }
         
-
     }
 }
 

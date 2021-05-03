@@ -2,7 +2,6 @@ let speed;
 class Square extends Figure{
     constructor(posX,posY,size, value){
        super(posX, posY, size, value)
-       speed = 2;
        this.value = (int(random(1,10)));
     }
 
@@ -13,7 +12,7 @@ class Square extends Figure{
         rect (this.posX, this.posY, this.size, this.size);
         fill(68, 52, 79);
         text (this.value, this.posX, this.posY);
-        //this.moveSquare();
+        this.moveSquare();
         
     }
 
@@ -46,6 +45,10 @@ class Square extends Figure{
 
         getPosX(){
             return this.posX;
+        }
+
+        setPosX(posX) {
+            this.posX = posX;
         }
     }
 
